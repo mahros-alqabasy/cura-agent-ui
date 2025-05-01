@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <iframe title="wireframe-0" frameborder="0" class="overflow-hidden"
+    style="height: 2203px; width: 100%; overflow: hidden; z-index: 10;" srcdoc="
+              <html class=&quot;&quot;>
+                
+  <head>
+      <link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+      
+    <script src=&quot;https://cdn.jsdelivr.net/npm/apexcharts&quot;></script>
+    <script src=&quot;https://cdn.tailwindcss.com&quot;></script>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest', // Options: 'nest', 'remove', 'replace'
+        };
+    </script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;></script>
+  
+      
+  <style>
+    * {
+      font-family: &quot;Inter&quot;, sans-serif;
+    }
+  
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  
+      
+  <style>
+    .highlighted-section {
+      outline: 2px solid #3F20FB;
+      background-color: rgba(63, 32, 251, 0.1);
+    }
+  
+    .edit-button {
+      position: absolute;
+      z-index: 1000;
+    }
+  </style>
+  
+      
+  <style>
+     :root {
+            /* Base colors */
+            --color-base: #ffffff;
+            --color-base-50: #f9fafb;
+            --color-base-100: #f3f4f6;
+            --color-base-200: #e5e7eb;
+            --color-base-300: #d1d5db;
+            --color-base-400: #9ca3af;
+            --color-base-500: #6b7280;
+            --color-base-600: #4b5563;  
+            --color-base-700: #374151;
+            --color-base-800: #1f2937;  
+            --color-base-900: #111827;
+            --color-base-content: #1f2937;
+  
+            /* Primary colors */
+            --color-primary: #3b82f6;
+            --color-primary-50: #eff6ff;
+            --color-primary-100: #dbeafe;
+            --color-primary-200: #bfdbfe;
+            --color-primary-300: #93c5fd;
+            --color-primary-400: #60a5fa;
+            --color-primary-500: #3b82f6;
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-primary-800: #1e40af;
+            --color-primary-900: #1e3a8a;
+            --color-primary-focus: #2563eb;
+            --color-primary-content: #ffffff;
+  
+            /* Secondary colors */
+            --color-secondary: #8b5cf6;
+            --color-secondary-50: #f5f3ff;
+            --color-secondary-100: #ede9fe;
+            --color-secondary-200: #ddd6fe;
+            --color-secondary-300: #c4b5fd;
+            --color-secondary-400: #a78bfa;
+            --color-secondary-500: #8b5cf6;
+            --color-secondary-600: #7c3aed;
+            --color-secondary-700: #6d28d9;
+            --color-secondary-800: #5b21b6;
+            --color-secondary-900: #4c1d95;
+            --color-secondary-focus: #7c3aed;
+            --color-secondary-content: #ffffff;
+  
+            /* Accent colors */
+            --color-accent: #f472b6;
+            --color-accent-50: #fdf2f8;
+            --color-accent-100: #fce7f3;
+            --color-accent-200: #fbcfe8;
+            --color-accent-300: #f9a8d4;
+            --color-accent-400: #f472b6;
+            --color-accent-500: #ec4899;
+            --color-accent-600: #db2777;
+            --color-accent-700: #be185d;
+            --color-accent-800: #9d174d;
+            --color-accent-900: #831843;
+            --color-accent-focus: #db2777;
+            --color-accent-content: #ffffff;
+  
+            /* Neutral colors */
+            --color-neutral: #6b7280;
+            --color-neutral-50: #f9fafb;
+            --color-neutral-100: #f3f4f6;
+            --color-neutral-200: #e5e7eb;
+            --color-neutral-300: #d1d5db;
+            --color-neutral-400: #9ca3af;
+            --color-neutral-500: #6b7280;
+            --color-neutral-600: #4b5563;
+            --color-neutral-700: #374151;
+            --color-neutral-800: #1f2937;
+            --color-neutral-900: #111827;
+            --color-neutral-focus: #4b5563;
+            --color-neutral-content: #ffffff;
+  
+            /* Info colors */
+            --color-info: #3b82f6;
+            --color-info-50: #eff6ff;
+            --color-info-100: #dbeafe;
+            --color-info-200: #bfdbfe;
+            --color-info-300: #93c5fd;
+            --color-info-400: #60a5fa;
+            --color-info-500: #3b82f6;
+            --color-info-600: #2563eb;
+            --color-info-700: #1d4ed8;
+            --color-info-800: #1e40af;
+            --color-info-900: #1e3a8a;
+            --color-info-focus: #2563eb;
+            --color-info-content: #ffffff;
+  
+            /* Success colors */
+            --color-success: #10b981;
+            --color-success-50: #ecfdf5;
+            --color-success-100: #d1fae5;
+            --color-success-200: #a7f3d0;
+            --color-success-300: #6ee7b7;
+            --color-success-400: #34d399;
+            --color-success-500: #10b981;
+            --color-success-600: #059669;
+            --color-success-700: #047857;
+            --color-success-800: #065f46;
+            --color-success-900: #064e3b;
+            --color-success-focus: #059669;
+            --color-success-content: #ffffff;
+  
+            /* Warning colors */
+            --color-warning: #f59e0b;
+            --color-warning-50: #fffbeb;
+            --color-warning-100: #fef3c7;
+            --color-warning-200: #fde68a;
+            --color-warning-300: #fcd34d;
+            --color-warning-400: #fbbf24;
+            --color-warning-500: #f59e0b;
+            --color-warning-600: #d97706;
+            --color-warning-700: #b45309;
+            --color-warning-800: #92400e;
+            --color-warning-900: #78350f;
+            --color-warning-focus: #d97706;
+            --color-warning-content: #ffffff;
+  
+            /* Error colors */
+            --color-error: #ef4444;
+            --color-error-50: #fef2f2;
+            --color-error-100: #fee2e2;
+            --color-error-200: #fecaca;
+            --color-error-300: #fca5a5;
+            --color-error-400: #f87171;
+            --color-error-500: #ef4444;
+            --color-error-600: #dc2626;
+            --color-error-700: #b91c1c;
+            --color-error-800: #991b1b;
+            --color-error-900: #7f1d1d;
+            --color-error-focus: #dc2626;
+            --color-error-content: #ffffff;
+          }
+  </style>
+  
+      
+  <style>
+  /* Dark theme */
+          .dark {
+            /* Base colors */
+            --color-base: #1f2937;
+            --color-base-50: #111827;
+            --color-base-100: #1f2937;
+            --color-base-200: #374151;
+            --color-base-300: #4b5563;
+            --color-base-400: #6b7280;
+            --color-base-500: #9ca3af;
+            --color-base-600: #d1d5db;
+            --color-base-700: #e5e7eb;
+            --color-base-800: #f3f4f6;
+            --color-base-900: #f9fafb;
+            --color-base-content: #f9fafb;
+  
+            /* Primary colors */
+            --color-primary: #60a5fa;
+            --color-primary-50: #1e3a8a;
+            --color-primary-100: #1e40af;
+            --color-primary-200: #1d4ed8;
+            --color-primary-300: #2563eb;
+            --color-primary-400: #3b82f6;
+            --color-primary-500: #60a5fa;
+            --color-primary-600: #93c5fd;
+            --color-primary-700: #bfdbfe;
+            --color-primary-800: #dbeafe;
+            --color-primary-900: #eff6ff;
+            --color-primary-focus: #3b82f6;
+            --color-primary-content: #1f2937;
+  
+            /* Secondary colors */
+            --color-secondary: #a78bfa;
+            --color-secondary-50: #4c1d95;
+            --color-secondary-100: #5b21b6;
+            --color-secondary-200: #6d28d9;
+            --color-secondary-300: #7c3aed;
+            --color-secondary-400: #8b5cf6;
+            --color-secondary-500: #a78bfa;
+            --color-secondary-600: #c4b5fd;
+            --color-secondary-700: #ddd6fe;
+            --color-secondary-800: #ede9fe;
+            --color-secondary-900: #f5f3ff;
+            --color-secondary-focus: #8b5cf6;
+            --color-secondary-content: #1f2937;
+  
+            /* Accent colors */
+            --color-accent: #f472b6;
+            --color-accent-50: #831843;
+            --color-accent-100: #9d174d;
+            --color-accent-200: #be185d;
+            --color-accent-300: #db2777;
+            --color-accent-400: #ec4899;
+            --color-accent-500: #f472b6;
+            --color-accent-600: #f9a8d4;
+            --color-accent-700: #fbcfe8;
+            --color-accent-800: #fce7f3;
+            --color-accent-900: #fdf2f8;
+            --color-accent-focus: #ec4899;
+            --color-accent-content: #1f2937;
+  
+            /* Neutral colors remain the same as light theme */
+  
+            /* Info colors */
+            --color-info: #60a5fa;
+            --color-info-50: #1e3a8a;
+            --color-info-100: #1e40af;
+            --color-info-200: #1d4ed8;
+            --color-info-300: #2563eb;
+            --color-info-400: #3b82f6;
+            --color-info-500: #60a5fa;
+            --color-info-600: #93c5fd;
+            --color-info-700: #bfdbfe;
+            --color-info-800: #dbeafe;
+            --color-info-900: #eff6ff;
+            --color-info-focus: #3b82f6;
+            --color-info-content: #1f2937;
+  
+            /* Success colors */
+            --color-success: #34d399;
+            --color-success-50: #064e3b;
+            --color-success-100: #065f46;
+            --color-success-200: #047857;
+            --color-success-300: #059669;
+            --color-success-400: #10b981;
+            --color-success-500: #34d399;
+            --color-success-600: #6ee7b7;
+            --color-success-700: #a7f3d0;
+            --color-success-800: #d1fae5;
+            --color-success-900: #ecfdf5;
+            --color-success-focus: #10b981;
+            --color-success-content: #1f2937;
+  
+            /* Warning colors */
+            --color-warning: #fbbf24;
+            --color-warning-50: #78350f;
+            --color-warning-100: #92400e;
+            --color-warning-200: #b45309;
+            --color-warning-300: #d97706;
+            --color-warning-400: #f59e0b;
+            --color-warning-500: #fbbf24;
+            --color-warning-600: #fcd34d;
+            --color-warning-700: #fde68a;
+            --color-warning-800: #fef3c7;
+            --color-warning-900: #fffbeb;
+            --color-warning-focus: #f59e0b;
+            --color-warning-content: #1f2937;
+  
+            /* Error colors */
+            --color-error: #f87171;
+            --color-error-50: #7f1d1d;
+            --color-error-100: #991b1b;
+            --color-error-200: #b91c1c;
+            --color-error-300: #dc2626;
+            --color-error-400: #ef4444;
+            --color-error-500: #f87171;
+            --color-error-600: #fca5a5;
+            --color-error-700: #fecaca;
+            --color-error-800: #fee2e2;
+            --color-error-900: #fef2f2;
+            --color-error-focus: #ef4444;
+            --color-error-content: #1f2937;
+          }
+  </style>
+  
+      
+    <script>
+          tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                  ...{&quot;transparent&quot;:&quot;transparent&quot;,&quot;current&quot;:&quot;currentColor&quot;,&quot;black&quot;:&quot;#000000&quot;,&quot;white&quot;:&quot;#ffffff&quot;,&quot;gray&quot;:{&quot;50&quot;:&quot;#f9fafb&quot;,&quot;100&quot;:&quot;#f3f4f6&quot;,&quot;200&quot;:&quot;#e5e7eb&quot;,&quot;300&quot;:&quot;#d1d5db&quot;,&quot;400&quot;:&quot;#9ca3af&quot;,&quot;500&quot;:&quot;#6b7280&quot;,&quot;600&quot;:&quot;#4b5563&quot;,&quot;700&quot;:&quot;#374151&quot;,&quot;800&quot;:&quot;#1f2937&quot;,&quot;900&quot;:&quot;#111827&quot;},&quot;red&quot;:{&quot;50&quot;:&quot;#fef2f2&quot;,&quot;100&quot;:&quot;#fee2e2&quot;,&quot;200&quot;:&quot;#fecaca&quot;,&quot;300&quot;:&quot;#fca5a5&quot;,&quot;400&quot;:&quot;#f87171&quot;,&quot;500&quot;:&quot;#ef4444&quot;,&quot;600&quot;:&quot;#dc2626&quot;,&quot;700&quot;:&quot;#b91c1c&quot;,&quot;800&quot;:&quot;#991b1b&quot;,&quot;900&quot;:&quot;#7f1d1d&quot;},&quot;yellow&quot;:{&quot;50&quot;:&quot;#fffbeb&quot;,&quot;100&quot;:&quot;#fef3c7&quot;,&quot;200&quot;:&quot;#fde68a&quot;,&quot;300&quot;:&quot;#fcd34d&quot;,&quot;400&quot;:&quot;#fbbf24&quot;,&quot;500&quot;:&quot;#f59e0b&quot;,&quot;600&quot;:&quot;#d97706&quot;,&quot;700&quot;:&quot;#b45309&quot;,&quot;800&quot;:&quot;#92400e&quot;,&quot;900&quot;:&quot;#78350f&quot;},&quot;green&quot;:{&quot;50&quot;:&quot;#ecfdf5&quot;,&quot;100&quot;:&quot;#d1fae5&quot;,&quot;200&quot;:&quot;#a7f3d0&quot;,&quot;300&quot;:&quot;#6ee7b7&quot;,&quot;400&quot;:&quot;#34d399&quot;,&quot;500&quot;:&quot;#10b981&quot;,&quot;600&quot;:&quot;#059669&quot;,&quot;700&quot;:&quot;#047857&quot;,&quot;800&quot;:&quot;#065f46&quot;,&quot;900&quot;:&quot;#064e3b&quot;},&quot;blue&quot;:{&quot;50&quot;:&quot;#eff6ff&quot;,&quot;100&quot;:&quot;#dbeafe&quot;,&quot;200&quot;:&quot;#bfdbfe&quot;,&quot;300&quot;:&quot;#93c5fd&quot;,&quot;400&quot;:&quot;#60a5fa&quot;,&quot;500&quot;:&quot;#3b82f6&quot;,&quot;600&quot;:&quot;#2563eb&quot;,&quot;700&quot;:&quot;#1d4ed8&quot;,&quot;800&quot;:&quot;#1e40af&quot;,&quot;900&quot;:&quot;#1e3a8a&quot;},&quot;indigo&quot;:{&quot;50&quot;:&quot;#eef2ff&quot;,&quot;100&quot;:&quot;#e0e7ff&quot;,&quot;200&quot;:&quot;#c7d2fe&quot;,&quot;300&quot;:&quot;#a5b4fc&quot;,&quot;400&quot;:&quot;#818cf8&quot;,&quot;500&quot;:&quot;#6366f1&quot;,&quot;600&quot;:&quot;#4f46e5&quot;,&quot;700&quot;:&quot;#4338ca&quot;,&quot;800&quot;:&quot;#3730a3&quot;,&quot;900&quot;:&quot;#312e81&quot;},&quot;purple&quot;:{&quot;50&quot;:&quot;#f5f3ff&quot;,&quot;100&quot;:&quot;#ede9fe&quot;,&quot;200&quot;:&quot;#ddd6fe&quot;,&quot;300&quot;:&quot;#c4b5fd&quot;,&quot;400&quot;:&quot;#a78bfa&quot;,&quot;500&quot;:&quot;#8b5cf6&quot;,&quot;600&quot;:&quot;#7c3aed&quot;,&quot;700&quot;:&quot;#6d28d9&quot;,&quot;800&quot;:&quot;#5b21b6&quot;,&quot;900&quot;:&quot;#4c1d95&quot;},&quot;pink&quot;:{&quot;50&quot;:&quot;#fdf2f8&quot;,&quot;100&quot;:&quot;#fce7f3&quot;,&quot;200&quot;:&quot;#fbcfe8&quot;,&quot;300&quot;:&quot;#f9a8d4&quot;,&quot;400&quot;:&quot;#f472b6&quot;,&quot;500&quot;:&quot;#ec4899&quot;,&quot;600&quot;:&quot;#db2777&quot;,&quot;700&quot;:&quot;#be185d&quot;,&quot;800&quot;:&quot;#9d174d&quot;,&quot;900&quot;:&quot;#831843&quot;}},
+                  ...{&quot;primary&quot;:{&quot;50&quot;:&quot;var(--color-primary-50)&quot;,&quot;100&quot;:&quot;var(--color-primary-100)&quot;,&quot;200&quot;:&quot;var(--color-primary-200)&quot;,&quot;300&quot;:&quot;var(--color-primary-300)&quot;,&quot;400&quot;:&quot;var(--color-primary-400)&quot;,&quot;500&quot;:&quot;var(--color-primary-500)&quot;,&quot;600&quot;:&quot;var(--color-primary-600)&quot;,&quot;700&quot;:&quot;var(--color-primary-700)&quot;,&quot;800&quot;:&quot;var(--color-primary-800)&quot;,&quot;900&quot;:&quot;var(--color-primary-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-primary)&quot;,&quot;focus&quot;:&quot;var(--color-primary-focus)&quot;,&quot;content&quot;:&quot;var(--color-primary-content)&quot;},&quot;secondary&quot;:{&quot;50&quot;:&quot;var(--color-secondary-50)&quot;,&quot;100&quot;:&quot;var(--color-secondary-100)&quot;,&quot;200&quot;:&quot;var(--color-secondary-200)&quot;,&quot;300&quot;:&quot;var(--color-secondary-300)&quot;,&quot;400&quot;:&quot;var(--color-secondary-400)&quot;,&quot;500&quot;:&quot;var(--color-secondary-500)&quot;,&quot;600&quot;:&quot;var(--color-secondary-600)&quot;,&quot;700&quot;:&quot;var(--color-secondary-700)&quot;,&quot;800&quot;:&quot;var(--color-secondary-800)&quot;,&quot;900&quot;:&quot;var(--color-secondary-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-secondary)&quot;,&quot;focus&quot;:&quot;var(--color-secondary-focus)&quot;,&quot;content&quot;:&quot;var(--color-secondary-content)&quot;},&quot;accent&quot;:{&quot;50&quot;:&quot;var(--color-accent-50)&quot;,&quot;100&quot;:&quot;var(--color-accent-100)&quot;,&quot;200&quot;:&quot;var(--color-accent-200)&quot;,&quot;300&quot;:&quot;var(--color-accent-300)&quot;,&quot;400&quot;:&quot;var(--color-accent-400)&quot;,&quot;500&quot;:&quot;var(--color-accent-500)&quot;,&quot;600&quot;:&quot;var(--color-accent-600)&quot;,&quot;700&quot;:&quot;var(--color-accent-700)&quot;,&quot;800&quot;:&quot;var(--color-accent-800)&quot;,&quot;900&quot;:&quot;var(--color-accent-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-accent)&quot;,&quot;focus&quot;:&quot;var(--color-accent-focus)&quot;,&quot;content&quot;:&quot;var(--color-accent-content)&quot;},&quot;neutral&quot;:{&quot;50&quot;:&quot;var(--color-neutral-50)&quot;,&quot;100&quot;:&quot;var(--color-neutral-100)&quot;,&quot;200&quot;:&quot;var(--color-neutral-200)&quot;,&quot;300&quot;:&quot;var(--color-neutral-300)&quot;,&quot;400&quot;:&quot;var(--color-neutral-400)&quot;,&quot;500&quot;:&quot;var(--color-neutral-500)&quot;,&quot;600&quot;:&quot;var(--color-neutral-600)&quot;,&quot;700&quot;:&quot;var(--color-neutral-700)&quot;,&quot;800&quot;:&quot;var(--color-neutral-800)&quot;,&quot;900&quot;:&quot;var(--color-neutral-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-neutral)&quot;,&quot;focus&quot;:&quot;var(--color-neutral-focus)&quot;,&quot;content&quot;:&quot;var(--color-neutral-content)&quot;},&quot;info&quot;:{&quot;50&quot;:&quot;var(--color-info-50)&quot;,&quot;100&quot;:&quot;var(--color-info-100)&quot;,&quot;200&quot;:&quot;var(--color-info-200)&quot;,&quot;300&quot;:&quot;var(--color-info-300)&quot;,&quot;400&quot;:&quot;var(--color-info-400)&quot;,&quot;500&quot;:&quot;var(--color-info-500)&quot;,&quot;600&quot;:&quot;var(--color-info-600)&quot;,&quot;700&quot;:&quot;var(--color-info-700)&quot;,&quot;800&quot;:&quot;var(--color-info-800)&quot;,&quot;900&quot;:&quot;var(--color-info-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-info)&quot;,&quot;focus&quot;:&quot;var(--color-info-focus)&quot;,&quot;content&quot;:&quot;var(--color-info-content)&quot;},&quot;success&quot;:{&quot;50&quot;:&quot;var(--color-success-50)&quot;,&quot;100&quot;:&quot;var(--color-success-100)&quot;,&quot;200&quot;:&quot;var(--color-success-200)&quot;,&quot;300&quot;:&quot;var(--color-success-300)&quot;,&quot;400&quot;:&quot;var(--color-success-400)&quot;,&quot;500&quot;:&quot;var(--color-success-500)&quot;,&quot;600&quot;:&quot;var(--color-success-600)&quot;,&quot;700&quot;:&quot;var(--color-success-700)&quot;,&quot;800&quot;:&quot;var(--color-success-800)&quot;,&quot;900&quot;:&quot;var(--color-success-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-success)&quot;,&quot;focus&quot;:&quot;var(--color-success-focus)&quot;,&quot;content&quot;:&quot;var(--color-success-content)&quot;},&quot;warning&quot;:{&quot;50&quot;:&quot;var(--color-warning-50)&quot;,&quot;100&quot;:&quot;var(--color-warning-100)&quot;,&quot;200&quot;:&quot;var(--color-warning-200)&quot;,&quot;300&quot;:&quot;var(--color-warning-300)&quot;,&quot;400&quot;:&quot;var(--color-warning-400)&quot;,&quot;500&quot;:&quot;var(--color-warning-500)&quot;,&quot;600&quot;:&quot;var(--color-warning-600)&quot;,&quot;700&quot;:&quot;var(--color-warning-700)&quot;,&quot;800&quot;:&quot;var(--color-warning-800)&quot;,&quot;900&quot;:&quot;var(--color-warning-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-warning)&quot;,&quot;focus&quot;:&quot;var(--color-warning-focus)&quot;,&quot;content&quot;:&quot;var(--color-warning-content)&quot;},&quot;error&quot;:{&quot;50&quot;:&quot;var(--color-error-50)&quot;,&quot;100&quot;:&quot;var(--color-error-100)&quot;,&quot;200&quot;:&quot;var(--color-error-200)&quot;,&quot;300&quot;:&quot;var(--color-error-300)&quot;,&quot;400&quot;:&quot;var(--color-error-400)&quot;,&quot;500&quot;:&quot;var(--color-error-500)&quot;,&quot;600&quot;:&quot;var(--color-error-600)&quot;,&quot;700&quot;:&quot;var(--color-error-700)&quot;,&quot;800&quot;:&quot;var(--color-error-800)&quot;,&quot;900&quot;:&quot;var(--color-error-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-error)&quot;,&quot;focus&quot;:&quot;var(--color-error-focus)&quot;,&quot;content&quot;:&quot;var(--color-error-content)&quot;},&quot;danger&quot;:{&quot;50&quot;:&quot;var(--color-error-50)&quot;,&quot;100&quot;:&quot;var(--color-error-100)&quot;,&quot;200&quot;:&quot;var(--color-error-200)&quot;,&quot;300&quot;:&quot;var(--color-error-300)&quot;,&quot;400&quot;:&quot;var(--color-error-400)&quot;,&quot;500&quot;:&quot;var(--color-error-500)&quot;,&quot;600&quot;:&quot;var(--color-error-600)&quot;,&quot;700&quot;:&quot;var(--color-error-700)&quot;,&quot;800&quot;:&quot;var(--color-error-800)&quot;,&quot;900&quot;:&quot;var(--color-error-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-error)&quot;,&quot;focus&quot;:&quot;var(--color-error-focus)&quot;,&quot;content&quot;:&quot;var(--color-error-content)&quot;},&quot;failure&quot;:{&quot;50&quot;:&quot;var(--color-error-50)&quot;,&quot;100&quot;:&quot;var(--color-error-100)&quot;,&quot;200&quot;:&quot;var(--color-error-200)&quot;,&quot;300&quot;:&quot;var(--color-error-300)&quot;,&quot;400&quot;:&quot;var(--color-error-400)&quot;,&quot;500&quot;:&quot;var(--color-error-500)&quot;,&quot;600&quot;:&quot;var(--color-error-600)&quot;,&quot;700&quot;:&quot;var(--color-error-700)&quot;,&quot;800&quot;:&quot;var(--color-error-800)&quot;,&quot;900&quot;:&quot;var(--color-error-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-error)&quot;,&quot;focus&quot;:&quot;var(--color-error-focus)&quot;,&quot;content&quot;:&quot;var(--color-error-content)&quot;}},
+                  },
+                },
+              },
+              variants: {
+                extend: {
+                  backgroundColor: ['active', 'group-hover'],
+                  textColor: ['active', 'group-hover'],
+                },
+              },
+              plugins: [],
+            };
+    </script>
+  
+  </head>
+  
+                <body class=&quot;h-full text-base-content&quot;>
+                  <!-- Header -->
+  <header id=&quot;header&quot; class=&quot;fixed w-full top-0 z-50 bg-white shadow-sm&quot;>
+    <div class=&quot;container mx-auto px-6&quot;>
+      <div class=&quot;flex items-center justify-between h-20&quot;>
+        <div class=&quot;flex items-center space-x-2&quot;>
+          <div class=&quot;h-8 w-8 bg-[#4CB269] rounded-lg flex items-center justify-center&quot;>
+            <i class=&quot;fa-solid fa-hospital text-white&quot;></i>
+          </div>
+          <span class=&quot;text-[#212529] text-xl font-semibold&quot;>Cura Agent</span>
+        </div>
+        
+        <nav class=&quot;hidden md:flex items-center space-x-8&quot;>
+          <span class=&quot;text-[#212529] hover:text-[#4CB269] text-sm cursor-pointer&quot;>Features</span>
+          <span class=&quot;text-[#212529] hover:text-[#4CB269] text-sm cursor-pointer&quot;>AI Assistant</span>
+          <span class=&quot;text-[#212529] hover:text-[#4CB269] text-sm cursor-pointer&quot;>Testimonials</span>
+          <a class=&quot;text-[#212529] hover:text-[#4CB269] text-sm&quot;>About</a>
+        </nav>
+        
+        <div class=&quot;flex items-center space-x-4&quot;>
+          <a href=&quot;./login_page.html&quot; class=&quot;text-[#4CB269] hover:text-[#275C36] text-sm font-medium&quot;>Sign In</a>
+          <a href=&quot;./signup_page.html&quot; class=&quot;bg-[#4CB269] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#275C36]&quot;>
+            Request Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id=&quot;hero&quot; class=&quot;bg-gradient-to-b from-[#D3ECDA] to-white pt-32 pb-20&quot;>
+    <div class=&quot;container mx-auto px-6&quot;>
+      <div class=&quot;grid md:grid-cols-2 gap-12 items-center&quot;>
+        <div class=&quot;space-y-8&quot;>
+          <h1 class=&quot;text-5xl font-bold text-[#212529] leading-tight&quot;>
+            The Future of Healthcare
+            <span class=&quot;text-[#4CB269] block&quot;>Powered by AI</span>
+          </h1>
+          
+          <p class=&quot;text-lg text-[#212529]/80 leading-relaxed&quot;>
+            Transform your healthcare facility with Cura Agent's intelligent system. Streamline operations, enhance patient care, and empower your staff with AI-driven insights.
+          </p>
+          
+          <div class=&quot;flex items-center space-x-6&quot;>
+            <a href=&quot;./login_page.html&quot; class=&quot;bg-[#4CB269] text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-[#275C36] flex items-center&quot;>
+              Get Started
+              <i class=&quot;fa-solid fa-arrow-right ml-2&quot;></i>
+            </a>
+            
+            <span class=&quot;text-[#212529] hover:text-[#4CB269] flex items-center text-base font-medium cursor-pointer&quot;>
+              Learn More
+              <i class=&quot;fa-solid fa-chevron-down ml-2&quot;></i>
+            </span>
+          </div>
+          
+          <div class=&quot;flex items-center space-x-8 pt-8&quot;>
+            <div>
+              <div class=&quot;flex -space-x-3&quot;>
+                <img src=&quot;https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg&quot; class=&quot;h-10 w-10 rounded-full border-2 border-white&quot;>
+                <img src=&quot;https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg&quot; class=&quot;h-10 w-10 rounded-full border-2 border-white&quot;>
+                <img src=&quot;https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg&quot; class=&quot;h-10 w-10 rounded-full border-2 border-white&quot;>
+              </div>
+            </div>
+            <div>
+              <div class=&quot;flex items-center text-[#00BFA5]&quot;>
+                <i class=&quot;fa-solid fa-star&quot;></i>
+                <i class=&quot;fa-solid fa-star&quot;></i>
+                <i class=&quot;fa-solid fa-star&quot;></i>
+                <i class=&quot;fa-solid fa-star&quot;></i>
+                <i class=&quot;fa-solid fa-star&quot;></i>
+              </div>
+              <p class=&quot;text-sm text-[#212529]/60 mt-1&quot;>Trusted by 500+ Healthcare Providers</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class=&quot;relative&quot;>
+          <div class=&quot;absolute inset-0 bg-gradient-to-r from-[#4CB269]/20 to-[#00BFA5]/20 rounded-3xl filter blur-3xl&quot;></div>
+          <div class=&quot;relative bg-white rounded-3xl p-6 shadow-xl&quot;>
+            <img class=&quot;w-full h-auto rounded-2xl&quot; src=&quot;https://storage.googleapis.com/uxpilot-auth.appspot.com/469f7f965e-2a49bad64720fbbddfff.png&quot; alt=&quot;modern medical dashboard interface with AI assistant&quot; />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section id=&quot;features&quot; class=&quot;bg-white py-20&quot;>
+    <div class=&quot;container mx-auto px-6&quot;>
+      <div class=&quot;text-center max-w-3xl mx-auto mb-16&quot;>
+        <h2 class=&quot;text-3xl font-bold text-[#212529] mb-4&quot;>
+          Intelligent Healthcare Management
+        </h2>
+        <p class=&quot;text-[#212529]/60&quot;>
+          Streamline your operations with our comprehensive suite of AI-powered tools and features
+        </p>
+      </div>
+      
+      <div class=&quot;grid md:grid-cols-3 gap-8&quot;>
+        <!-- Feature 1 -->
+        <div class=&quot;bg-white rounded-xl p-6 hover:bg-[#D3ECDA]/50 transition shadow-lg border border-[#E0E0E0]&quot;>
+          <div class=&quot;h-12 w-12 bg-[#4CB269]/10 rounded-lg flex items-center justify-center mb-4&quot;>
+            <i class=&quot;fa-solid fa-robot text-[#4CB269] text-xl&quot;></i>
+          </div>
+          <h3 class=&quot;text-xl font-semibold text-[#212529] mb-2&quot;>AI Assistant</h3>
+          <p class=&quot;text-[#212529]/60&quot;>24/7 intelligent support for all healthcare professionals. Automate routine tasks and get instant insights.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class=&quot;bg-white rounded-xl p-6 hover:bg-[#D3ECDA]/50 transition shadow-lg border border-[#E0E0E0]&quot;>
+          <div class=&quot;h-12 w-12 bg-[#4CB269]/10 rounded-lg flex items-center justify-center mb-4&quot;>
+            <i class=&quot;fa-solid fa-chart-line text-[#4CB269] text-xl&quot;></i>
+          </div>
+          <h3 class=&quot;text-xl font-semibold text-[#212529] mb-2&quot;>Smart Analytics</h3>
+          <p class=&quot;text-[#212529]/60&quot;>Real-time insights and predictive analytics to improve patient care and operational efficiency.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class=&quot;bg-white rounded-xl p-6 hover:bg-[#D3ECDA]/50 transition shadow-lg border border-[#E0E0E0]&quot;>
+          <div class=&quot;h-12 w-12 bg-[#4CB269]/10 rounded-lg flex items-center justify-center mb-4&quot;>
+            <i class=&quot;fa-solid fa-shield-alt text-[#4CB269] text-xl&quot;></i>
+          </div>
+          <h3 class=&quot;text-xl font-semibold text-[#212529] mb-2&quot;>Secure Platform</h3>
+          <p class=&quot;text-[#212529]/60&quot;>HIPAA-compliant security with advanced encryption and role-based access control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- AI Assistant Demo Section -->
+  <section id=&quot;ai-assistant&quot; class=&quot;bg-[#D3ECDA]/30 py-20&quot;>
+    <div class=&quot;container mx-auto px-6&quot;>
+      <div class=&quot;grid md:grid-cols-2 gap-12 items-center&quot;>
+        <div class=&quot;space-y-8&quot;>
+          <span class=&quot;text-[#4CB269] text-sm font-medium&quot;>AI-POWERED ASSISTANCE</span>
+          <h2 class=&quot;text-3xl font-bold text-[#212529]&quot;>
+            Meet Your Intelligent Healthcare Assistant
+          </h2>
+          <p class=&quot;text-[#212529]/60 leading-relaxed&quot;>
+            Experience the power of AI in healthcare. Our intelligent assistant helps you manage appointments, access patient records, and make informed decisions - all through natural conversation.
+          </p>
+          
+          <div class=&quot;space-y-4&quot;>
+            <div class=&quot;flex items-start space-x-3&quot;>
+              <div class=&quot;h-6 w-6 bg-[#4CB269]/10 rounded flex items-center justify-center flex-shrink-0&quot;>
+                <i class=&quot;fa-solid fa-check text-[#4CB269] text-xs&quot;></i>
+              </div>
+              <p class=&quot;text-[#212529]/80&quot;>Natural language processing for effortless interaction</p>
+            </div>
+            
+            <div class=&quot;flex items-start space-x-3&quot;>
+              <div class=&quot;h-6 w-6 bg-[#4CB269]/10 rounded flex items-center justify-center flex-shrink-0&quot;>
+                <i class=&quot;fa-solid fa-check text-[#4CB269] text-xs&quot;></i>
+              </div>
+              <p class=&quot;text-[#212529]/80&quot;>Voice commands for hands-free operation</p>
+            </div>
+            
+            <div class=&quot;flex items-start space-x-3&quot;>
+              <div class=&quot;h-6 w-6 bg-[#4CB269]/10 rounded flex items-center justify-center flex-shrink-0&quot;>
+                <i class=&quot;fa-solid fa-check text-[#4CB269] text-xs&quot;></i>
+              </div>
+              <p class=&quot;text-[#212529]/80&quot;>Contextual awareness for personalized assistance</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class=&quot;relative&quot;>
+          <div class=&quot;absolute inset-0 bg-gradient-to-r from-[#4CB269]/20 to-[#00BFA5]/20 rounded-3xl filter blur-3xl&quot;></div>
+          <div class=&quot;relative bg-white rounded-3xl p-6 shadow-xl&quot;>
+            <div class=&quot;bg-[#F8F9FA] rounded-2xl p-4&quot;>
+              <div class=&quot;flex items-center justify-between mb-4&quot;>
+                <div class=&quot;flex items-center space-x-2&quot;>
+                  <i class=&quot;fa-solid fa-robot text-[#4CB269]&quot;></i>
+                  <span class=&quot;text-[#212529]&quot;>Doctor Assistant</span>
+                </div>
+                <div class=&quot;flex items-center space-x-2&quot;>
+                  <button class=&quot;h-8 w-8 flex items-center justify-center rounded-full bg-white shadow-sm&quot;>
+                    <i class=&quot;fa-solid fa-microphone text-[#4CB269]&quot;></i>
+                  </button>
+                  <button class=&quot;h-8 w-8 flex items-center justify-center rounded-full bg-white shadow-sm&quot;>
+                    <i class=&quot;fa-solid fa-expand text-[#4CB269]&quot;></i>
+                  </button>
+                </div>
+              </div>
+              
+              <div class=&quot;space-y-4&quot;>
+                <div class=&quot;flex items-start&quot;>
+                  <div class=&quot;bg-white text-[#212529] p-3 rounded-lg rounded-tl-none max-w-[80%] shadow-sm&quot;>
+                    <p class=&quot;text-sm&quot;>Hello Dr. Wilson, how can I assist you today?</p>
+                  </div>
+                </div>
+                
+                <div class=&quot;flex items-start justify-end&quot;>
+                  <div class=&quot;bg-[#4CB269] text-white p-3 rounded-lg rounded-tr-none max-w-[80%]&quot;>
+                    <p class=&quot;text-sm&quot;>Show me my appointments for today</p>
+                  </div>
+                </div>
+                
+                <div class=&quot;flex items-start&quot;>
+                  <div class=&quot;bg-white text-[#212529] p-3 rounded-lg rounded-tl-none max-w-[80%] shadow-sm&quot;>
+                    <p class=&quot;text-sm&quot;>You have 5 appointments scheduled for today. Here's your schedule:</p>
+                    <div class=&quot;mt-2 space-y-2&quot;>
+                      <div class=&quot;flex items-center space-x-2 text-xs&quot;>
+                        <span class=&quot;text-[#4CB269]&quot;>09:00 AM</span>
+                        <span>Sarah Johnson - Follow-up</span>
+                      </div>
+                      <div class=&quot;flex items-center space-x-2 text-xs&quot;>
+                        <span class=&quot;text-[#4CB269]&quot;>10:30 AM</span>
+                        <span>Michael Brown - Initial Consultation</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class=&quot;mt-4&quot;>
+                <div class=&quot;flex items-center space-x-2&quot;>
+                  <input type=&quot;text&quot; placeholder=&quot;Type your message...&quot; class=&quot;flex-grow bg-white text-[#212529] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#4CB269] shadow-sm&quot;>
+                  <button class=&quot;h-10 w-10 flex items-center justify-center rounded-lg bg-[#4CB269]&quot;>
+                    <i class=&quot;fa-solid fa-paper-plane text-white&quot;></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section id=&quot;testimonials&quot; class=&quot;bg-white py-20&quot;>
+    <div class=&quot;container mx-auto px-6&quot;>
+      <div class=&quot;text-center max-w-3xl mx-auto mb-16&quot;>
+        <h2 class=&quot;text-3xl font-bold text-[#212529] mb-4&quot;>
+          Trusted by Leading Healthcare Providers
+        </h2>
+        <p class=&quot;text-[#212529]/60&quot;>
+          See what healthcare professionals say about Cura Agent
+        </p>
+      </div>
+    </div>
+  </section>
+                </body>
+              </html>
+            ">
+  </iframe>
+</body>
+
+</html>
